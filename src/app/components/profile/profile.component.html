@@ -1,0 +1,4 @@
+<div *ngIf="profile$ | async as profile">
+  <h1>Profile {{ profile.fullName }}</h1>
+</div>
+<button (click)="goBack()">back</button>

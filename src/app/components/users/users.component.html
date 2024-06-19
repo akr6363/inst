@@ -1,0 +1,7 @@
+<p>users works!</p>
+@for (user of users$ | async; track user.id) {
+  <div [routerLink]="['/profile', user.id]">{{ user.name }}</div>
+}
+<button [queryParams]="{ page: 1 }" [routerLink]="['/users']">to start</button>
+
+<button (click)="getNextUsers()">next</button>
