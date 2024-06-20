@@ -1,0 +1,12 @@
+<nav>
+  <a class="button" routerLink="/login" routerLinkActive="activebutton">login</a>
+  <a class="button" routerLink="/users" routerLinkActive="activebutton">users</a>
+  <a class="button" routerLink="/profile" routerLinkActive="activebutton">profile</a>
+  <a
+    class="button"
+    routerLink="/"
+    routerLinkActive="activebutton"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >home</a
+  >
+</nav>

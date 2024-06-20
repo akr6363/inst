@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProfileService } from '../../services/profile.service';
-import { ProfileResponse } from '../../services/profile.service';
+import { ProfileResponse } from '../../models/profile.model';
 
 @Component({
   selector: 'inst-profile',

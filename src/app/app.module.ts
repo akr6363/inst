@@ -5,31 +5,33 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterOutlet, RouterModule } from '@angular/router';
-import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
-import { HomeComponent } from './components/home/home.component';
-import { UsersComponent } from './components/users/users.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { LoginComponent } from './components/login/login.component';
-import { CredentionalsInterceptor } from './interceptors/credentionals.interceptor';
+import { CredentionalsInterceptor } from './core/interceptors/credentionals.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HomeModule } from './home/home.module';
+import { AuthModule } from './auth/auth.module';
+import { ProfileModule } from './profile/profile.module';
+import { NotFoundModule } from './not-found/not-found.module';
+import { UsersModule } from './users/users.module';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    NotFoundPageComponent,
-    UsersComponent,
-    ProfileComponent,
-    LoginComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AppRoutingModule,
     RouterModule,
     RouterOutlet,
+    HomeModule,
+    AuthModule,
+    ProfileModule,
+    NotFoundModule,
+    UsersModule,
+    CoreModule,
+    AppRoutingModule,
+    SharedModule,
   ],
   bootstrap: [AppComponent],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: CredentionalsInterceptor, multi: true }],
